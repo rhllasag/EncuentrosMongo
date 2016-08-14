@@ -15,8 +15,8 @@ import org.mongodb.morphia.annotations.Entity;
  */
 @Entity(noClassnameStored = true)
 public class Encuentro extends BaseEntity{
-      int id_usuario1;
-      int id_usuario2;
+      String id_usuario1;
+      String id_usuario2;
       Date fecha_creacion;
       Date ultima_fecha;
       String estado;
@@ -27,21 +27,22 @@ public class Encuentro extends BaseEntity{
       String acepta_match1;
       String acepta_match2;
 
-    public int getId_usuario1() {
+    public String getId_usuario1() {
         return id_usuario1;
     }
 
-    public void setId_usuario1(int id_usuario1) {
+    public void setId_usuario1(String id_usuario1) {
         this.id_usuario1 = id_usuario1;
     }
 
-    public int getId_usuario2() {
+    public String getId_usuario2() {
         return id_usuario2;
     }
 
-    public void setId_usuario2(int id_usuario2) {
+    public void setId_usuario2(String id_usuario2) {
         this.id_usuario2 = id_usuario2;
     }
+
 
     public Date getFecha_creacion() {
         return fecha_creacion;

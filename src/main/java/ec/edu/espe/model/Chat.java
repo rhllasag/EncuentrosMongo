@@ -14,10 +14,10 @@ import org.mongodb.morphia.annotations.Entity;
  * @author homer
  */
 @Entity(noClassnameStored = true)
-public class Bloqueo extends BaseEntity{
+public class Chat extends BaseEntity{
     String id_usuario1;
     String id_usuario2;
-    Date date;
+    String mensaje;
 
     public String getId_usuario1() {
         return id_usuario1;
@@ -35,12 +35,14 @@ public class Bloqueo extends BaseEntity{
         this.id_usuario2 = id_usuario2;
     }
 
-    public Date getDate() {
-        return date;
+    public String getMensaje() {
+        return mensaje;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
+
+
     
 }

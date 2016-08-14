@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.dao;
-import ec.edu.espe.model.Usuario;
+
+import ec.edu.espe.model.Encuentro;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.dao.BasicDAO;
+
 /**
  *
  * @author homer
  */
-public class UsuarioDAO extends BasicDAO<Usuario,ObjectId>{
+public class EncuentroDAO extends BasicDAO<Encuentro,ObjectId>{
     
-    public UsuarioDAO(Class<Usuario> entityClass, Datastore ds) {
+    public EncuentroDAO(Class<Encuentro> entityClass, Datastore ds) {
         super(entityClass, ds);
-    }     
+    }
+    
 }

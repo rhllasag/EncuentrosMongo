@@ -15,6 +15,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import org.mongodb.morphia.Key;
 import org.mongodb.morphia.query.Query;
 
 /**
@@ -87,7 +88,7 @@ public class UsuarioBean {
             System.out.println("Usuario a actualizar: "+usuario);
             if (temp != null) {
                  
-                this.usuarioDAO.update(usuario);
+                //this.usuarioDAO.update(usuario);
                 //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Éxito", "El  nuevo cliente ha sido registrado"));
                 this.usuario = new Usuario();
                  System.out.println("Usuario Actualizado");
@@ -99,5 +100,15 @@ public class UsuarioBean {
             //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "El  nuevo cliente no se pudo registrar"));
             System.out.println("" + e);
         }
+    }
+    public Usuario getUsuarioByNickname(String nickname)
+    {
+        Usuario temp= this.usuarioDAO.findOne("nickname",nickname);
+        return temp;
+    }
+    public void removeUsuarioByNickname(String nickname)
+    {
+        Usuario temp= this.usuarioDAO.findOne("nickname",nickname);
+        usuarioDAO.delete(temp);
     }
 }
