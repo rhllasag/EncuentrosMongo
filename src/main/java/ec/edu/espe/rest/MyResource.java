@@ -76,7 +76,7 @@ public class MyResource {
     @GET
     @Path("getUsuarioConBloqueo/{id_usuario}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Nickname> getUsuariosQueHeBloqueado(@PathParam("id_usuario")String usuario) {
+    public List<Nickname> getUsuariosConBloqueo(@PathParam("id_usuario")String usuario) {
         BloqueoBean bean=new BloqueoBean();
         List<Bloqueo> bloqueos=bean.getUsuariosConBloqueo();
         List<Nickname> usuariosConBloqueo=new ArrayList<>();
@@ -97,7 +97,7 @@ public class MyResource {
     @GET
     @Path("getBloqueos")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Bloqueo> getUsuariosQueHeBloqueado() {
+    public List<Bloqueo> getBloqueos() {
         BloqueoBean bean=new BloqueoBean();
         return bean.getBloqueos();
     }
